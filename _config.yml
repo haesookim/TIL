@@ -18,9 +18,9 @@ email: haesoo1108@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Daily recordings of what I have learned and achieved as an aspiring developer.
   Working towards Human-Computer Interaction, Front-end development, Information Visualization, and more.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://haesookim.github.io/TIL" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  haesookim
+baseurl: "/TIL" # the subpath of your site, e.g. /blog
+url: "https://haesookim.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: haesookim
 
 # Build settings
 markdown: kramdown

@@ -27,7 +27,6 @@ tags: [machine learning, lecture notes]
     * The point is to automatically find a categorization, structure, or patterns within the dataset
         * May open possibilities to further classification based on data
     * Cocktail party algorithm
-    
         {% highlight octave %}
         [W, s, v] = svd((repmat(sum(x.*x, 1), size(x, 1).1).*x)*x');
         {% endhighlight %}

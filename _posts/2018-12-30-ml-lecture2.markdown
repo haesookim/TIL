@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "ML lecture 2"
+date:   2018-12-30
+categories: [Coursera Stanford ML]
+tags: [machine learning, lecture notes]
+---
+
+## Linear Regression
+
+Basically: Model Fitting based on data
+Used on supervised learning tasks where you need to predict real-valued (nondiscrete) outputs
+
+* Terms & notations
+    * In some training set:
+        * *m*: number of training examples
+        * *x*: input variables(features)
+        * *y*: output variables/target variables
+    * (*x, y*) : some single traning example
+    * (*x(i), y(i)*): a specific training example
+        * (i)는 위 첨자로 쓴다
+
+## Forming a model
+
+From a training set, it is **fed** to a certain learning algorithm.
+
+The learning algorithm will create a certain hypothesis *h* that takes some input *x* and maps it to certain (estimated) output *y*.
+
+Such hypotheses are usually represented by a linear regression model, univariate in this case.
+(parameters are represented by greek alphabet theta)
+* Replace to proper formatting (LaTeX?) when I find out how to do it in markdown
+
+## Cost Function
+
+How do we choose the parameters that fit into the regression model?
+-> Choose parameters that allow the hypothesis *h(x)* to closely resembles the value *y* in the mapping *(x, y)*.
+
+For the cost function J, the goal is to minimize the value of J depending on the values of the parameters theta 1 and theta 0. This is usually done through the method of **Squared Error cost function** or the **Mean squared error** method. The global minimum of the cost function is acquired with the minimum value of the error functions.
+
+* Note: Is *h(x)* basically a derivative of *J*?
+
+## Parameter Learning and gradient descent
+
+* Gradient descent : gradual minimization of a function
+    * continually update the parameter values until the cost function reaches a minimum
+    * relies heavily on the initialization of variables and the learning rate alpha
+    * basically: repeat until convergence
+        *(fill in with equation)
+* When the theta values point to a local/global minimum, the derivative lies at zero and thus does not change over iterations.
+    * this leads to a convergence to the local minima even with a fixed learning rate value since the gradient decreases over time
+    * if the learning rate is too big, the values may fail to converge or even end up diverging
+* Term: Batch gradient descent
+    * The method used for the cost function where it calculates the sum (sigma) value of all the examples in the test set
+    * each step of descent uses all the training examples
+

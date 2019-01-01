@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Starting TILs / 일일 배움 기록 시작하기"
-date:   2018-12-27
+date:   2018-12-26
 categories: [Plans]
 tags: [misc]
 ---

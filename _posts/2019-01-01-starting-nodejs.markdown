@@ -35,7 +35,7 @@ http.createServer(function (request, response){
 ### REPL
 
 파이썬 idle처럼 Read/Eval/Print/Loop을 터미널 상에서 실행할 수 있다. 실행방법은
-{% highlight %}
+{% highlight shell-session %}
 $ node
 {% endhighlight %}
 이렇게 하면 됨
@@ -43,33 +43,33 @@ $ node
 ### NPM 및 패키지 모듈
 
 Node Package Manager(NPM): Node.js 패키지 유틸리티 및 버전관리 툴
-{% highlight %}
+{% highlight shell-session %}
 $ npm install <Module Name>
 {% endhighlight %}
 이런 식으로 각종 모듈을 locally 설치할 수 있다. 이렇게 설치한 모듈은 *require()*함수로 불러올 수 있음
 
 다만 이렇게 모듈을 설치할 경우 local mode로 들어가며, 해당 앱의 node_modules 디렉토리에서만 찾을 수 있고 다른 앱에서는 찾을 수 없다....?
 
-{% highlight %}
+{% highlight shell-session %}
 $ npm install <Module Name> -g
 {% endhighlight %}
 그래서 global mode로 설치해 줄 필요가 있음. 이때는 각 앱의 디렉토리가 아닌 시스템 디렉토리에 저장되고, require() 함수로 불러올 수 없지만 커맨드라인 상에서 실행할 수 있다
 
 참고할 기능들 
-{% highlight %}
+{% highlight shell-session %}
 $ npm uninstall <Module Name>
 {% endhighlight %}
 
-{% highlight %}
+{% highlight shell-session %}
 $ npm update <Module Name>
 {% endhighlight %}
 
-{% highlight %}
+{% highlight shell-session %}
 $ npm search <Module Name>
 {% endhighlight %}
 
 새 모듈을 만들 경우: adduser, publish 등을 함께 사용하여 직접 모듈을 공개적으로 전시(?)할 수 있다. npm init를 사용할 경우 package.json 파일을 만들기 위한 기만 데이터를 다 받아오는 형식
-{% highlight %}
+{% highlight shell-session %}
 $ npm init
 {% endhighlight %}
 

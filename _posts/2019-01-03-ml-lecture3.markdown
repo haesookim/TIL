@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "ML #3: Multivariate Linear Regression"
+date:   2019-01-03
+categories: [Coursera Stanford ML]
+tags: [machine learning, lecture notes]
+---
+
+### Linear Regression with multiple variables
+
+Multiple variables (features) come together to output a single output variable
+
+Need an update in notations:
+* *n* : Number of features
+* *x(i)* : Features of the *i*th training example (an n-dimensional vector)
+* *x_j(i)*: Value of feature *j* in the *i*th training example
+
+An hypothesis with *n* features is expressed by (Theta transposed) * (X) where
+* Theta is the n+1 dimensional vector comprised of the parameters
+* X is the n+1 dimensional vector comprised of the features
+    * for notation purposes, *x_0* = 1, so that theta_0 is kept and preserved
+
+### Gradient descent for multivariate regression
+
+Similar to univariate gradient descent, but there is a nested sum variable to stand for the hypothesis that now allows for multiple variable slots.
+
+The repeat until convergence step is also preserved, except to iterate for all *n* features of the set
+* add cost function equations here
+
+### Methods to facilitate gradient descent in multivariate regression
+
+* Feature Scaling
+    * Make sure the features are on a similar scale when using gradient descent
+    * Skewed models oscillate, which lead to inefficient convergence
+    * match the features in an approximately -1 <= x <= 1 scale
+        * rule of thumb may vary
+* Mean Normalization
+    * allow the features to have approximately zero mean to account for variation scales
+    * divide by range or standard deviation
+
+### Debugging Gradient Descent
+
+* Automatic Convergence test
+    * conclude for convergence if the change in cost function value is less than an arbitrary epsilon?
+    * basically checking for convergence
+
+For a sufficiently small learning rate (alpha), the cost function value will decrease on every iteration.
+* if the learning rate is too small, the convergence may be too slow
+* if too large, may diverge
+    * if the cost function value is diverging over iteration, one must decrease the learning rate to ensure convergence
+
+### Polynomial regression
+
+* Add arbitrary features that are polynomial values of the original feature value
+* must consider for feature scaling and mean normalization since scales multiply in a geometric scale

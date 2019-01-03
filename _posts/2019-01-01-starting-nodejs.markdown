@@ -20,7 +20,7 @@ var http = require("http");
 http.createServer(function (request, response){
     // HTTP response의 Header 부분을 지정한다 
     // Status code(이 경우에는 200 == OK, 404, 403 등등..)와 content type 등의 header information을 채운다
-    response.writeHead(200, {'Content-Type: 'text/plain'});
+    response.writeHead(200, {'Content-Type: text/plain'});
 
     // response Body content
     response.end('input content here');

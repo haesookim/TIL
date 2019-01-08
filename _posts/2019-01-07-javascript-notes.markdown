@@ -45,12 +45,13 @@ console.log(`my name is ${myName}.`);
     * used for defaulting a value?
     * This is how you implement it
 {% highlight javascript %}
+// pickOne will take the value of 'Truth' since an empty string takes a boolean value of false
 var one = '';
 var two = 'Truth';
 
 var pickTwo = one || two;
-// pickOne will take the value of 'Truth' since an empty string takes a boolean value of false
 
+// Essentially operates like this
 var pickOne;
 
 if (one){
@@ -58,8 +59,6 @@ if (one){
 } else{
     pickOne = two;
 }
-
-// Essentially operates like this
 {% endhighlight %}
 
 ### Function Expression
@@ -70,13 +69,28 @@ if (one){
 
 {% highlight javascript %}
 // This is to declare the function
-
 const identifier = function (arg1, arg2){
     return;
 }
 
 // This is to call the function
-
 identifier(parameter1, parameter2);
-
 {% endhighlight %}
+
+* Arrow function syntax
+    * Essentially the same as a function expression but uses the fat arrow syntax ()=> instead of using the keyword 'function'
+
+{% highlight javascript %}
+const identifier = (arg1, arg2) => {
+    return;
+}
+{% endhighlight %}
+
+* Conscise Arrow functions
+    * Basically used for simplifying javascript code
+    * If you have one argument/parameter, then you don't need parentheses
+        * if you have zero or 2 <=, then you need parentheses
+    * Single-line code blocks do not require curly braces
+    * Implicit return
+        * Single-line code implies the result of the expression will be the return value
+        * this means that the return statement can be omitted

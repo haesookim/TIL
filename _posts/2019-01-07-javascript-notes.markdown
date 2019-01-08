@@ -23,9 +23,10 @@ tags: [Javascript, languages]
 ### String interpolation
 * Must use backticks to ensure this working
     * not regular quotation marks!
+    * on macOS korean mode, type using Option + '`' (otherwise will print ₩)
 {% highlight javascript %}
 var myName = 'Haesoo';
-console.log(₩my name is ${myName}.₩);
+console.log(`my name is ${myName}.`);
 // this will print 'my name is Haesoo.'
 {% endhighlight %}
 
@@ -61,3 +62,21 @@ if (one){
 // Essentially operates like this
 {% endhighlight %}
 
+### Function Expression
+
+* Define a function within a function expression, using an anonymous function
+    * declare a variable to take the function name (usually uses const)
+    * assign an anonymous function to that variable
+
+{% highlight javascript %}
+// This is to declare the function
+
+const identifier = function (arg1, arg2){
+    return;
+}
+
+// This is to call the function
+
+identifier(parameter1, parameter2);
+
+{% endhighlight %}

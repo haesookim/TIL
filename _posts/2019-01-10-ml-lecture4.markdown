@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "ML #4: Normal Equations"
+date:   2019-01-10
+categories: [Coursera Stanford ML]
+tags: [machine learning, lecture notes]
+---
+
+### Normal Equation
+
+In contrast to Gradient descent, a method that solves for the parameter theta iteratively, normal equations solve for theta analytically, through calculus methods. For a simple polynomial equation(where theta is a Real Number), one obtains the derivative of the equation by theta and setting the value of theta so that the derivative equals zero.
+
+For a multidimensional vector theta, you obtain the partial derivative for each separate value of theta to solve for the inclusive vector.
+
+* Compare and contrast with Gradient Descent
+    * Gradient Descent
+        * Need to explicitly choose the value of alpha (learning rate) through a trial-and error process
+        * requires iterations
+        * works well for a large n (time complexity: *O(kn^2)*)
+        * requires feature scaling for efficient iterations
+    * Normal equations
+        * solving for n is slow for large n, since the time complexity of solving for an inverse matrix is high
+        * time complexity of *O(n^3)*
+
+### Non-invertability
+
+Somtimes the matrix may not be invertible
+* Redundant features (features that are linearly dependent to one another)
+* too many features (m < n)

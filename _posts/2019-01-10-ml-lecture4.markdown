@@ -12,6 +12,13 @@ In contrast to Gradient descent, a method that solves for the parameter theta it
 
 For a multidimensional vector theta, you obtain the partial derivative for each separate value of theta to solve for the inclusive vector.
 
+{% highlight octave %}
+pinv(X' * X) * X' * y
+
+// Take the inverse of X transposed & X, multiply that matrix with the transpose of X, then y
+// Use pinv() instead of inv() in octave to obtain answers where the matrix is degenerate
+{% endhighlight %}
+
 * Compare and contrast with Gradient Descent
     * Gradient Descent
         * Need to explicitly choose the value of alpha (learning rate) through a trial-and error process
@@ -24,6 +31,6 @@ For a multidimensional vector theta, you obtain the partial derivative for each 
 
 ### Non-invertability
 
-Somtimes the matrix may not be invertible
+Somtimes the matrix may not be invertible (These are called degenerate/singular matrices)
 * Redundant features (features that are linearly dependent to one another)
 * too many features (m < n)

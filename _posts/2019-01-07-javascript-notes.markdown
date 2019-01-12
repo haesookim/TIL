@@ -10,6 +10,7 @@ tags: [Javascript, languages]
 (심지어는 Node 스터디 포스팅이 더 먼저라니ㅠㅠ)
 
 ### Variable assignment
+
 * var
     * Is function scoped
     * variable is declared globally no matter the block of declaration
@@ -21,6 +22,7 @@ tags: [Javascript, languages]
     * cannot leave as 'undefined' type, must be initialized with declaration
 
 ### String interpolation
+
 * Must use backticks to ensure this working
     * not regular quotation marks!
     * on macOS korean mode, type using Option + '`' (otherwise will print ₩)
@@ -31,6 +33,7 @@ console.log(`my name is ${myName}.`);
 {% endhighlight %}
 
 ### '==' VS '===' : What's the difference?
+
 * JS에서는 equal operator가 '==' 이 아니라 '==='이다
     * 다른 언어에서의 isEqual()과 동일한 역할을 한다 
     * type과 value의 일치를 검사한다는 느낌
@@ -38,6 +41,7 @@ console.log(`my name is ${myName}.`);
 * '=='는 반면 value operator로서 typecast 후의 결과를 출력한다
 
 ### Conditionals
+
 * Short-circuit
     * operands are considered from the left, and short-circuits if said operand is true
         * if first operand is true, the second operand is ignored even if true
@@ -94,3 +98,38 @@ const identifier = (arg1, arg2) => {
     * Implicit return
         * Single-line code implies the result of the expression will be the return value
         * this means that the return statement can be omitted
+
+### Arrays
+
+* can define arrays using the 'let' or 'const' keywords
+    * with 'let'-defined arrays you can reassign elements or the entire array
+    * with 'const'-defined arrays you can reassign individual elements, but not the entire array
+
+* Mutating/non-mutating methods
+    * Methods such as .push(), .pop() etc. are *mutating methods*, meaning that such methods, when called, will alter the original array and save a new form to it.
+    * in contrast, methods like .slice() are non-mutating
+
+### Pass-by Reference
+
+When you pass a variable to a function: array 자료형 등은 값 자체가 대입되는 것이 아닌 값이 저장되어 있는 memory reference를 보내는 것, therefore the variable is modified outside of the scope
+* Find a more robust explanation for this
+
+### Functions
+
+* Functions as a **First-class object**
+    * In JavaScript, functions are also considered as data
+    * as first-class objects, javaScript functions can have properties and methods as well as its invoked utility
+        * i.e.) .name, .length, .tostring() etc.
+    * We can also assign a function to a variable
+{% highlight javascript %}
+function thisDoesSomething(){
+    console.log('do Something');
+}
+
+const do = thisDoesSomething;
+// This will assign the functional value(reference) of the 'thisDoesSomething' function
+// Not the return result! Note that there are no parentheses
+
+do();
+// This will have the same functionality as thisDoesSomething();
+{% endhighlight %}
